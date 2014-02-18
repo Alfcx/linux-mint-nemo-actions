@@ -1,0 +1,11 @@
+[Nemo Action]
+#Active=false
+Name=Create Sandwich-PDF
+Comment=Adds a text-layer to your file so it gets searchable and stores the original file in archive-directory
+Name[de]=Aufbereiten & Texterkennung
+Comment[de]=Speichert die Originaldatei im Archiv, optimiert das Dokument, fügt eine Textschicht hinzu und erzeugt ein PDF
+Exec=<scan-to-sandwich-pdf.sh "%F">
+Icon-Name=scanner
+Selection=s
+Extensions=pdf;tiff;tif;
+#Dependencies=zenity;ghostscript;scantailor;tesseract-ocr;tesseract-ocr-deu;tesseract-ocr-fra;exactimage;pdftk;

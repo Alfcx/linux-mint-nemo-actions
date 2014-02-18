@@ -1,0 +1,11 @@
+[Nemo Action]
+#Active=false
+Name=Edit Metadata
+Comment=Change the Title and the Author of the Document
+Name[de]=Metadaten bearbeiten
+Comment[de]=Titel und Autor in die Eigenschaften des Dokuments eintragen
+Exec=<pdf-metadata-edit.sh "%F">
+Icon-Name=pdf
+Selection=s
+Extensions=pdf;
+Dependencies=zenity;pdftk;

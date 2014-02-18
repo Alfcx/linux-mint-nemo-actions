@@ -1,0 +1,11 @@
+[Nemo Action]
+#Active=false
+Name=Rotate Pages
+Comment=Rotate every page of a PDF-Document
+Name[de]=Seiten drehen
+Comment[de]=Dreht die Seiten eines PDF-Dokuments
+Exec=<pdf-rotate.sh "%F">
+Icon-Name=pdf
+Selection=s
+Extensions=pdf;
+Dependencies=zenity;pdftk;

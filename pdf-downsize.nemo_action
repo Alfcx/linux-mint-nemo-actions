@@ -1,0 +1,11 @@
+[Nemo Action]
+#Active=false
+Name=Downsize the document
+Comment=Downsize the document and backup the original file
+Name[de]=Dokument verkleinern
+Comment[de]=Verkleinert das Dokument und speichert das Original im Archiv
+Exec=<pdf-downsize.sh "%F">
+Icon-Name=pdf
+Selection=s
+Extensions=pdf;
+Dependencies=zenity;ghostscript;
