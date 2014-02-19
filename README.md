@@ -4,11 +4,13 @@ linux-mint-nemo-actions
 This Repository contains bilingual (english and german) Nemo Actions for Linux Mint. The Shell/Zenity Scripts should also work on other debian based Distros.
 
 ## 2. About Nemo Actions in general ##
-Nemo Actions (Linux Mint) or Nautilus Actions (Ubuntu) lets you run a command, a script or a program from the context menu (the menu that shows up when you right-click on a file or folder).<br>
+Nemo Actions (Linux Mint) or Nautilus Actions (Ubuntu) let you run a command, a script or a program from the context menu (the menu that shows up when you right-click on a file or folder).<br>
 Linux Mint stores the Nemo Actions in <code>~/.local/share/nemo/actions</code> (user) and <code>/usr/share/nemo/actions</code> (system-wide).
 
 ## 3. The Nemo Actions in this Repository ##
 This repository contains nemo actions focused on (pdf) document management, and the post processing of scanned documents.<br>
+![doc menu](screenshots/doc-menu.png)
+![pdf menu](screenshots/pdf-menu.png)
 
 ### 3.1 Convert doc(x) to odt ###
 #### 3.1.1 Files ####
@@ -54,7 +56,9 @@ sudo apt-get install ghostscript zenity</code></pre>
 * pdf-metadata-edit-en.sh
 
 #### 3.4.2 Description ####
-Lets you edit the <b>author</b>- and the <b>title</b>-tag of a pdf file.
+Lets you edit the <b>author</b>- and the <b>title</b>-tag of a pdf file.<br>
+![PDF Metadata Edit 1](screenshots/pdf-edit-metadata-1.png)
+![PDF Metadata Edit 2](screenshots/pdf-edit-metadata-2.png)
 
 #### 3.4.3 Prerequisites ####
 Pdftk is used to work the pdf file. Zenity is used to for the GUI.
@@ -68,7 +72,8 @@ sudo apt-get install pdftk zenity</code></pre>
 * pdf-rotate-en.sh
 
 #### 3.5.2 Description ####
-Lets you rotate the pages of a pdf file (90° cw, 90° ccw, 180°). Ideal for scanned documents.
+Lets you rotate the pages of a pdf file (90° cw, 90° ccw, 180°). Ideal for scanned multipage documents.<br>
+![PDF Rotate](screenshots/pdf-rotate.png)
 
 #### 3.5.3 Prerequisites ####
 Pdftk is used to rotate the pages. Zenity is used to for the GUI.
@@ -84,7 +89,10 @@ sudo apt-get install pdftk zenity</code></pre>
 
 #### 3.6.2 Description ####
 Takes your scanned documents (pdf or tif), splits double pages (if necessary), corrects page alignement, sets document to black and white, runs text recognition and adds the text layer to the pdf file. You end up with a searchable/indexable pdf file, a so called sandwich-pdf file.<br>
-If necessary apply the rotate script (3.5) first, otherwise the text recognition will fail.
+If necessary apply the rotate script (3.5) first, otherwise the text recognition will fail.<br>
+![Scan to Sandwich-PDF 1](screenshots/scan-to-sandwich-pdf-1.png)
+![Scan to Sandwich-PDF 2](screenshots/scan-to-sandwich-pdf-2.png)
+![Scan to Sandwich-PDF 3](screenshots/scan-to-sandwich-pdf-3.png)
 
 #### 3.6.3 Prerequisites ####
 This Script uses several programs. 

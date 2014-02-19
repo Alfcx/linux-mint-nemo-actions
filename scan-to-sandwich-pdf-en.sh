@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-########################
-# scan-to-sandwich-pdf #
-########################
+#####################################################
+# scan-to-sandwich-pdf by Alfcx (simon@simonleu.ch) #
+#####################################################
 #
 ###############
 # Description #
@@ -37,7 +37,7 @@
 # User-Variables (change, if you like) #
 ########################################
 # Workdirectory for temporary files
-tmpdir="/tmp/scan-hocr" ;
+tmpdir="/tmp/scan-to-sandwich-pdf" ;
 # The output's name will be the input document's name plus a suffix. 
 # Whithout suffix the original file will be overwritten.
 suffix="" ;
@@ -59,17 +59,19 @@ workdir="$tmpdir/$fbnamenospaces" ;
 archivename="`date +"%F_%H-%M-%S"`_$basenamenospaces" ;
 #
 # Ask for the primary language of the document
-seltesslang=$(zenity --list \
+if ! SELTESSLANG=$(zenity --list \
                      --hide-header \
                      --text="Choose the primary language of the document" \
                      --title "Create Sandwich-PDF out of «$basename»" \
                      --width=400 --height=150 \
                      --radiolist --column "" --column "" TRUE "english" FALSE "french" FALSE "german" ) ;
+then exit ;
+fi ;
 #
-case "$seltesslang" in 
-"english")tesslang="eng";;
-"french")tesslang="fra";;
-"german")tesslang="deu";;
+case "$SELTESSLANG" in 
+"english")TESSLANG="eng";;
+"french")TESSLANG="fra";;
+"german")TESSLANG="deu";;
 esac 
 #
 # Go into directory
@@ -103,7 +105,7 @@ done ;
 echo "38" ;
 echo "# Optical character recognition in progress" ;
 for i in $workdir/c2p-tif-out/*.tif ; 
-do tesseract "$i" "$i" -l $tesslang -psm 1 hocr ;
+do tesseract "$i" "$i" -l $TESSLANG -psm 1 hocr ;
 done ;
 #
 # Generate sandwich-pdf (pdf-document with text layer and picture) single pages.
