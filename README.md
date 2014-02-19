@@ -11,7 +11,7 @@ This Repository contains bilingual (english and german) Nemo Actions for Linux M
 <br>Lets you rotate all the pages of a pdf document in one click ([more](#21-pdf-document-page-rotator)).
 <br><br>
 <b>2. Scan to Sandwich PDF</b>
-<br>Takes your scanned document (tif or pdf), splits double pages, corrects the alignement, sets the document to black and white, runs <b>text recognition</b>, adds a text layer to the document. You will end up with a seachable/indexable pdf document. Also stores the original file in an archive directory ([more](#22-scan-to-sandwich-pdf)).
+<br>This script takes your scanned document (tif or pdf), splits double pages, corrects the alignement, sets the document to black and white, runs <b>text recognition</b>, adds a text layer to the document. You will end up with a seachable/indexable pdf document. Also stores the original file in an archive directory ([more](#22-scan-to-sandwich-pdf)).
 <br><br>
 <b>3. PDF Metadata Editor</b>
 <br>Lets you edit the title- and author-tag of a pdf file ([more](#23-pdf-metadata-editor)).
@@ -35,7 +35,7 @@ This Repository contains bilingual (english and german) Nemo Actions for Linux M
 * pdf-rotate-en.sh
 
 #### 2.1.2 Description ####
-Lets you rotate the pages of a pdf file (90° cw, 90° ccw, 180°). Ideal for scanned multipage documents.<br>
+Lets you rotate all the the pages of a pdf file in one click (90° cw, 90° ccw, 180°). Ideal for scanned multipage documents.<br>
 ![PDF Rotate](screenshots/pdf-rotate.png)
 
 #### 2.1.3 Prerequisites ####
@@ -88,7 +88,7 @@ sudo apt-get install pdftk zenity</code></pre>
 * pdf-downsize-en.sh
 
 #### 2.4.2 Description ####
-Makes your scanned pdf files smaller and stores the original file in the archive directory.<br>
+Reduces the size of your scanned pdf files and stores the original file in the archive directory.<br>
 You don't need to run this script on files you edited with [Scan to Sandwich PDF](#22-scan-to-sandwich-pdf) (this script already downsizes the pdf files). 
 
 #### 2.4.3 Prerequisites ####
@@ -128,12 +128,12 @@ cd ~/Downloads/linux-mint-nemo-actions</code></pre>
 2. Clone the files from this repository to your computer.
 <pre><code>git clone https://github.com/Alfcx/linux-mint-nemo-actions</code></pre>
 
-3. Make sure you have the necessary programs (for the nemo action you want) installed on your system. E.G. for the sandwich-pdf nemo action you'll have to run:
+3. Make sure you have the necessary programs (for the nemo action you want) installed on your system. E.g. for the sandwich-pdf nemo action you'll have to run:
 <pre><code>sudo apt-get update
 sudo apt-get install zenity ghostscript scantailor tesseract-ocr tesseract-ocr-deu tesseract-ocr-fra exactimage pdftk</code></pre>
 
 4. Copy the files for the wanted nemo action to your nemo actions directory. Linux Mint stores the Nemo Actions in <code>~/.local/share/nemo/actions</code> (user) and <code>/usr/share/nemo/actions</code> (system-wide).
-Also make sure the shell scripts are executable.  E.G. for the "scan to sandwich pdf" nemo action you'll have to run:
+Also make sure the shell scripts are executable.  E.g. for the "scan to sandwich pdf" nemo action you'll have to run:
 <pre><code>cp scan-to-sandwich-pdf.nemo_action ~/.local/share/nemo/actions
 cp scan-to-sandwich-pdf.sh ~/.local/share/nemo/actions
 cp scan-to-sandwich-pdf-de.sh ~/.local/share/nemo/actions
@@ -141,6 +141,4 @@ cp scan-to-sandwich-pdf-en.sh ~/.local/share/nemo/actions
 chmod +x ~/.local/share/nemo/actions/scan-to-sandwich-pdf.sh
 chomd +x ~/.local/share/nemo/actions/scan-to-sandwich-pdf-de.sh
 chmod +x ~/.local/share/nemo/actions/scan-to-sandwich-pdf-en.sh</code></pre>
-5. Test if it works. E.G. for the sandwich pdf nemo action you can right-click on a pdf file and look for the entry "Create Sandwich-PDF". If it doesn't work reload cinnamon.
-<pre><code>cinnamon --replace</code></pre>
-6. Have Fun with your nemo actions and let me know if they work for you. 
+5. You should now be able to see your Nemo Action in the context menu (e.g. you'll see "Create Sandwich-PDF" when you right-click on a pdf file). If you don't see the Nemo Action, log out and back in. Have Fun with this Nemo Actions and let me know if they work for you.
