@@ -53,9 +53,9 @@ sudo apt-get install pdftk zenity</code></pre>
 #### 2.2.2 Description ####
 Takes your scanned documents (pdf or tif), splits double pages (if necessary), corrects page alignement, sets document to black and white, runs text recognition and adds the text layer to the pdf file. You will end up with a searchable/indexable pdf file, a so called sandwich-pdf file.<br>
 If necessary apply the [PDF Document Page Rotator](#21-pdf-document-page-rotator) first, otherwise the text recognition will fail.<br>
-<img src="screenshots/scan-to-sandwich-pdf-1.png" width="400">
-<img src="screenshots/scan-to-sandwich-pdf-2.png" width="400">
-<img src="screenshots/scan-to-sandwich-pdf-3.png" width="400">
+<img src="screenshots/scan-to-sandwich-pdf-1.png" width="350">
+<img src="screenshots/scan-to-sandwich-pdf-2.png" width="350">
+<img src="screenshots/scan-to-sandwich-pdf-3.png" width="350">
 
 #### 2.2.3 Prerequisites ####
 This Script uses several programs. 
