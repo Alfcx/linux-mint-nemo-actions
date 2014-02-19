@@ -8,22 +8,22 @@ Nemo Actions (Linux Mint) or Nautilus Actions (Ubuntu) let you run a command, a 
 This Repository contains bilingual (english and german) Nemo Actions for Linux Mint focused on the postprocessing of scanned documents and document management. The Shell/Zenity Scripts should work on other debian based Distros too. The featured Nemo Actions are:
 
 <b>1. PDF Document Page Rotator</b>
-<br>Lets you turn all the pages of a pdf document in one click.
+<br>Lets you rotate all the pages of a pdf document in one click ([more](#21-pdf-document-page-rotator)).
 <br><br>
 <b>2. Scan to Sandwich PDF</b>
-<br>Takes your scanned document (tif or pdf), splits double pages, corrects the alignement, sets the document to black and white, runs text recognition, adds a text layer to the document. You will end up with a seachable/indexable pdf document. Also stores the original file in an archive directory.
+<br>Takes your scanned document (tif or pdf), splits double pages, corrects the alignement, sets the document to black and white, runs <b>text recognition</b>, adds a text layer to the document. You will end up with a seachable/indexable pdf document. Also stores the original file in an archive directory ([more](#22-scan-to-sandwich-pdf)).
 <br><br>
 <b>3. PDF Metadata Editor</b>
-<br>Lets you edit the title- and author-tag of a pdf file.
+<br>Lets you edit the title- and author-tag of a pdf file ([more](#23-pdf-metadata-editor)).
 <br><br>
 <b>4. Pdf Document Downsizer</b>
-<br>Reduces the size of your scanned pdf documents and stores the original file in an archive directory.
+<br>Reduces the size of your scanned pdf documents and stores the original file in an archive directory ([more](#24-pdf-document-downsizer)).
 <br><br>
 <b>5. doc(x) to odt Converter</b>
-<br>Converts Microsoft Office documents (doc, docx) to do documents in the LibreOffice format (odt).
+<br>Converts Microsoft Office documents (doc, docx) to do documents in the LibreOffice (odt) format ([more](#25-docx-to-odt-converter)).
 <br><br>
-<b>6. doc(x),odt,txt to pdf Converter</b>
-<br>Converts your doc, docx, odt and txt documents to pdf files.
+<b>6. doc(x), odt, txt to pdf Converter</b>
+<br>Converts your doc, docx, odt and txt documents to pdf files ([more](#26-docx-odt-txt-to-pdf-converter)).
 <br>
 
 ## 2. Detailed View on the Nemo Actions in this Repository ##
