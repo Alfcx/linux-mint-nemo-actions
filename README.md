@@ -3,19 +3,12 @@ linux-mint-nemo-actions
 ## 1. Overwiew ##
 This Repository contains bilingual (english and german) Nemo Actions for Linux Mint focused the postprocessing of scanned documents and document management. The Shell/Zenity Scripts should also work on other debian based Distros. The featured Nemo Actions are:
 
-| - | - |
-| PDF Document Page Rotator | Lets you turn all the pages of a pdf document in one click. |
-| - | - |
-| Scan to Sandwich PDF | Takes your scanned document (tif or pdf), splits double pages, corrects the alignement, sets the document to black and white, runs text recognition, adds a text layer to the document. You end up with a seachable/indexable pdf document. Also backs up the original file in an archive directory. |
-| - | - |
-| PDF Metadata Editor | Lets you edit the title- and author-tag of a pdf file |
-| - | - |
-| Pdf document downsizer | ... |
-| - | - |
-| doc(x)/odt/txt -> pdf converter | ... |
-| - | - |
-| doc(x) -> odt converter | ... |
-| - | - |
+PDF Document Page Rotator | Lets you turn all the pages of a pdf document in one click.
+Scan to Sandwich PDF | Takes your scanned document (tif or pdf), splits double pages, corrects the alignement, sets the document to black and white, runs text recognition, adds a text layer to the document. You end up with a seachable/indexable pdf document. Also backs up the original file in an archive directory.
+PDF Metadata Editor | Lets you edit the title- and author-tag of a pdf file
+Pdf document downsizer | ... 
+doc(x)/odt/txt -> pdf converter | ... 
+doc(x) -> odt converter | ... 
 
 
 ## 2. About Nemo Actions in general ##
