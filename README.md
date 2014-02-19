@@ -1,5 +1,5 @@
-linux-mint-nemo-actions
-=======================
+Linux Mint Nemo Actions by Alfcx
+================================
 ## 1. Abstract ##
 ![doc menu](screenshots/doc-menu.png)
 ![pdf menu](screenshots/pdf-menu.png)
@@ -51,11 +51,11 @@ sudo apt-get install pdftk zenity</code></pre>
 * scan-to-sandwich-pdf-en.sh
 
 #### 2.2.2 Description ####
-Takes your scanned documents (pdf or tif), splits double pages (if necessary), corrects page alignement, sets document to black and white, runs text recognition and adds the text layer to the pdf file. You end up with a searchable/indexable pdf file, a so called sandwich-pdf file.<br>
-If necessary apply the rotate script (3.5) first, otherwise the text recognition will fail.<br>
-![Scan to Sandwich-PDF 1](screenshots/scan-to-sandwich-pdf-1.png)
-![Scan to Sandwich-PDF 2](screenshots/scan-to-sandwich-pdf-2.png)
-![Scan to Sandwich-PDF 3](screenshots/scan-to-sandwich-pdf-3.png)
+Takes your scanned documents (pdf or tif), splits double pages (if necessary), corrects page alignement, sets document to black and white, runs text recognition and adds the text layer to the pdf file. You will end up with a searchable/indexable pdf file, a so called sandwich-pdf file.<br>
+If necessary apply the [PDF Document Page Rotator](#21-pdf-document-page-rotator) first, otherwise the text recognition will fail.<br>
+<img src="screenshots/scan-to-sandwich-pdf-1.png" width="300">
+<img src="screenshots/scan-to-sandwich-pdf-2.png" width="300">
+<img src="screenshots/scan-to-sandwich-pdf-3.png" width="300">
 
 #### 2.2.3 Prerequisites ####
 This Script uses several programs. 
@@ -88,7 +88,8 @@ sudo apt-get install pdftk zenity</code></pre>
 * pdf-downsize-en.sh
 
 #### 2.4.2 Description ####
-Makes your scanned pdf files smaller and stores the original file in the archive directory.
+Makes your scanned pdf files smaller and stores the original file in the archive directory.<br>
+You don't need to run this script on files you edited with [Scan to Sandwich PDF](#22-scan-to-sandwich-pdf) (this script already downsizes the pdf files). 
 
 #### 2.4.3 Prerequisites ####
 Ghostscript is used to work the pdf file. Zenity is used to for the GUI. 
