@@ -49,9 +49,10 @@ sudo apt-get install pdftk zenity</code></pre>
 ### 2.2 Scan to Sandwich PDF ###
 #### 2.2.1 Files ####
 * scan-to-sandwich-pdf.nemo_action
-* scan-to-sandwich-pdf.sh
-* scan-to-sandwich-pdf-de.sh
-* scan-to-sandwich-pdf-en.sh
+* scan-to-sandwich-pdf/scan-to-sandwich-pdf.sh
+* scan-to-sandwich-pdf/config.ini
+* scan-to-sandwich-pdf/lang/de.ini
+* scan-to-sandwich-pdf/lang/en.ini
 
 #### 2.2.2 Description ####
 Takes your scanned documents (pdf or tif), splits double pages (if necessary), corrects page alignement, sets document to black and white, runs text recognition and adds the text layer to the pdf file. You will end up with a searchable/indexable pdf file, a so called sandwich-pdf file.<br>

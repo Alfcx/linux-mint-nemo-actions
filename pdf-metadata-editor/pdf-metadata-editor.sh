@@ -13,7 +13,7 @@ lang="${MDM_LANG%_*}" ;
 # Imort the translation suiting your language. 
 # If there's no translation for your language, import the english one.
 scriptdir=`dirname "$0"` ;
-langdir="$scriptdir/lang"
+langdir="$scriptdir/lang" ;
 if [ -f "$langdir/$lang.ini" ] ;
 then source "$langdir/$lang.ini" ;
 else source "$langdir/en.ini" ;
@@ -32,14 +32,14 @@ if ! TITLE=$(zenity --entry \
   --text="$title_text" \
   --width=300) ; then
   exit;
-fi
+fi ;
 # Ask for the author's name
 if ! AUTHOR=$(zenity --entry \
   --title="$author_title" \
   --text="$author_text" \
   --width=300) ; then
   exit;
-fi
+fi ;
 # Get the existing metadata
 pdftk "$tmpdir/$basename" dump_data output "$tmpdir/$basename.txt"
 # Remove existing entries

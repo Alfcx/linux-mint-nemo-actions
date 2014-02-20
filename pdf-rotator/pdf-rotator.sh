@@ -5,7 +5,7 @@
 ########################
 #
 # Directory for temporary files (change if you like)
-tmpdir="/tmp/pdf-rotate" ;
+tmpdir="/tmp/pdf-rotator" ;
 #
 # Further Variables
 file="$1"; 
