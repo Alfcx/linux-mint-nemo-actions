@@ -140,12 +140,9 @@ cd ~/Downloads/linux-mint-nemo-actions</code></pre>
 sudo apt-get install zenity ghostscript scantailor tesseract-ocr tesseract-ocr-deu tesseract-ocr-fra exactimage pdftk</code></pre>
 
 4. Copy the files for the wanted nemo action to your nemo actions directory. Linux Mint stores the Nemo Actions in <code>~/.local/share/nemo/actions</code> (user) and <code>/usr/share/nemo/actions</code> (system-wide).
-Also make sure the shell scripts are executable.  E.g. for the "scan to sandwich pdf" nemo action you'll have to run:
+Also make sure the shell script is executable.  E.g. for the "scan to sandwich pdf" nemo action you'll have to run:
 <pre><code>cp scan-to-sandwich-pdf.nemo_action ~/.local/share/nemo/actions
-cp scan-to-sandwich-pdf.sh ~/.local/share/nemo/actions
-cp scan-to-sandwich-pdf-de.sh ~/.local/share/nemo/actions
-cp scan-to-sandwich-pdf-en.sh ~/.local/share/nemo/actions
-chmod +x ~/.local/share/nemo/actions/scan-to-sandwich-pdf.sh
-chomd +x ~/.local/share/nemo/actions/scan-to-sandwich-pdf-de.sh
-chmod +x ~/.local/share/nemo/actions/scan-to-sandwich-pdf-en.sh</code></pre>
+mkdir ~/.local/share/nemo/actions/scan-to-sandwich-pdf
+cp -r scan-to-sandwich-pdf/* ~/.local/share/nemo/actions/scan-to-sandwich-pdf
+chmod +x ~/.local/share/nemo/actions/scan-to-sandwich-pdf/scan-to-sandwich-pdf.sh</code></pre>
 5. You should now be able to see your Nemo Action in the context menu (e.g. you'll see "Create Sandwich-PDF" when you right-click on a pdf file). If you don't see the Nemo Action, log out and back in. Have Fun with this Nemo Actions and let me know if they work for you.
