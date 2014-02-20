@@ -37,7 +37,7 @@ This Repository contains bilingual (english and german) Nemo Actions for Linux M
 #### 2.1.2 Description ####
 Lets you rotate all the the pages of a pdf file in one click (90° cw, 90° ccw, 180°).
 It's ideal for scanned multipage documents.<br>
-![PDF Rotate](screenshots/pdf-rotate.png)
+![PDF Rotate](screenshots/pdf-rotate.png)<br>
 In the background runs this one-liner:
 <pre><code>pdftk "INPUT" cat "ROTATION" output "OUTPUT" ;</pre></code>
 
