@@ -29,14 +29,17 @@ This Repository contains bilingual (english and german) Nemo Actions for Linux M
 ## 2. Detailed View on the Nemo Actions in this Repository ##
 ### 2.1 PDF Document Page Rotator ###
 #### 2.1.1 Files ####
-* pdf-rotate.nemo_action
-* pdf-rotate.sh
-* pdf-rotate-de.sh
-* pdf-rotate-en.sh
+* pdf-rotator.nemo_action
+* pdf-rotator/pdf-rotator.sh
+* pdf-rotator/lang/de.ini
+* pdf-rotator/lang/en.ini
 
 #### 2.1.2 Description ####
-Lets you rotate all the the pages of a pdf file in one click (90° cw, 90° ccw, 180°). Ideal for scanned multipage documents.<br>
+Lets you rotate all the the pages of a pdf file in one click (90° cw, 90° ccw, 180°).
+It's ideal for scanned multipage documents.<br>
 ![PDF Rotate](screenshots/pdf-rotate.png)
+In the background runs this one-liner:
+<pre><code>pdftk "INPUT" cat "ROTATION" output "OUTPUT" ;</pre></code>
 
 #### 2.1.3 Prerequisites ####
 Pdftk is used to rotate the pages. Zenity is used to for the GUI.
@@ -65,10 +68,10 @@ sudo apt-get install zenity ghostscript scantailor tesseract-ocr tesseract-ocr-d
 
 ### 2.3 PDF Metadata Editor ###
 #### 2.3.1 Files ####
-* pdf-metadata-edit.nemo_action
-* pdf-metadata-edit.sh
-* pdf-metadata-edit-de.sh
-* pdf-metadata-edit-en.sh
+* pdf-metadata-editor.nemo_action
+* pdf-metadata-editor/pdf-metadata-editor.sh
+* pdf-metadata-editor/lang/de.ini
+* pdf-metadata-editor/lang/en.ini
 
 #### 2.3.2 Description ####
 Lets you edit the <b>author</b>- and the <b>title</b>-tag of a pdf file.<br>

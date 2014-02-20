@@ -1,10 +1,10 @@
 [Nemo Action]
 #Active=false
 Name=Rotate Pages
-Comment=Rotate every page of a PDF-Document
+Comment=Rotate every page of a PDF-Document in one Click
 Name[de]=Seiten drehen
 Comment[de]=Dreht die Seiten eines PDF-Dokuments
-Exec=<pdf-rotate.sh "%F">
+Exec=<"pdf-rotator/pdf-rotator.sh" "%F">
 Icon-Name=pdf
 Selection=s
 Extensions=pdf;
