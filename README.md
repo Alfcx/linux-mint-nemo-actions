@@ -5,7 +5,7 @@ Linux Mint Nemo Actions by Alfcx
 ![pdf menu](screenshots/pdf-menu.png)
 
 Nemo Actions (Linux Mint) or Nautilus Actions (Ubuntu) let you run a command, a script or a program from the context menu (the menu that shows up when you right-click on a file or folder).<br>
-This Repository contains bilingual (english and german) Nemo Actions for Linux Mint focused on the postprocessing of scanned documents and document management. The Shell/Zenity Scripts should work on other debian based Distros too. The featured Nemo Actions are:
+This Repository contains Nemo Actions for Linux Mint focused on the postprocessing of scanned documents and document management. The Shell/Zenity Scripts should work on other debian based Distros too. At the moment the GUIs are available in english and german (other languages: ready to translate). The featured Nemo Actions are:
 
 <b>1. PDF Document Page Rotator</b>
 <br>Lets you rotate all the pages of a pdf document in one click ([more](#21-pdf-document-page-rotator)).
