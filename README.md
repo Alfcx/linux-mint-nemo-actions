@@ -82,13 +82,16 @@ sudo apt-get install pdftk zenity</code></pre>
 
 ### 2.4 PDF Document Downsizer ###
 #### 2.4.1 Files ####
-* pdf-downsize.nemo_action
-* pdf-downsize.sh
-* pdf-downsize-de.sh
-* pdf-downsize-en.sh
+* pdf-downsizer.nemo_action
+* pdf-downsizer/pdf-downsizer.sh
+* pdf-downsizer/config.ini
+* pdf-downsizer/lang/en.ini
+* pdf-downsizer/lang/de.ini
 
 #### 2.4.2 Description ####
-Reduces the size of your scanned pdf files and stores the original file in the archive directory.<br>
+Reduces the size of your scanned pdf files by running this ghostscript one-liner on the document:
+<pre><code>gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile="OUTPUTFILE" "INPUTFILE" ;</code></pre>
+Also makes a backup of the original file in an archive directory (default: /home/$USER/Scan-Archive; will be created, if it doesn't exist).<br>
 You don't need to run this script on files you edited with [Scan to Sandwich PDF](#22-scan-to-sandwich-pdf) (this script already downsizes the pdf files). 
 
 #### 2.4.3 Prerequisites ####
