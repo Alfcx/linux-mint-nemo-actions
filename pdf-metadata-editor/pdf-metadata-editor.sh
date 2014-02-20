@@ -1,7 +1,23 @@
 #!/bin/bash
 #
+################################
+# PDF Metadata Editor by Alfcx #
+################################
+#
 # Directory for temporary files (change if you like)
 tmpdir="/tmp/pdf-metadata" ;
+#
+# Get your language
+lang="${MDM_LANG%_*}" ;
+#
+# Imort the translation suiting your language. 
+# If there's no translation for your language, import the english one.
+scriptdir=`dirname "$0"` ;
+langdir="$scriptdir/lang"
+if [ -f "$langdir/$lang.ini" ] ;
+then source "$langdir/$lang.ini" ;
+else source "$langdir/en.ini" ;
+fi ;
 #
 file="$1" ;
 dirname=`dirname "$file"` ;
@@ -12,15 +28,15 @@ mkdir -p "$tmpdir" ;
 cp "$dirname/$basename" "$tmpdir/$basename" ;
 # Ask for the title
 if ! TITLE=$(zenity --entry \
-  --title="Edit Metadata (1/2)" \
-  --text="Title of the Document" \
+  --title="$title_title" \
+  --text="$title_text" \
   --width=300) ; then
   exit;
 fi
 # Ask for the author's name
 if ! AUTHOR=$(zenity --entry \
-  --title="Edit Metadata (2/2)" \
-  --text="Author(s) of the Document\nName Prename, Name Prename" \
+  --title="$author_title" \
+  --text="$author_text" \
   --width=300) ; then
   exit;
 fi
