@@ -7,6 +7,10 @@
 # Directory for temporary files (change if you like)
 tmpdir="/tmp/pdf-metadata" ;
 #
+file="$1" ;
+dirname=`dirname "$file"` ;
+basename=`basename "$file"` ;
+#
 # Get your language
 lang="${MDM_LANG%_*}" ;
 #
@@ -18,10 +22,6 @@ if [ -f "$langdir/$lang.ini" ] ;
 then source "$langdir/$lang.ini" ;
 else source "$langdir/en.ini" ;
 fi ;
-#
-file="$1" ;
-dirname=`dirname "$file"` ;
-basename=`basename "$file"` ;
 #
 # prepare tmpdir and copy file
 mkdir -p "$tmpdir" ;
