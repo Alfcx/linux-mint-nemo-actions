@@ -11,7 +11,7 @@ This Repository contains Nemo Actions for Linux Mint focused on the postprocessi
 <br>Lets you rotate all the pages of a pdf document in one click ([more](#21-pdf-document-page-rotator)).
 <br><br>
 <b>2. Scan to Sandwich PDF</b>
-<br>This script takes your scanned document (tif or pdf), splits double pages, corrects the alignement, sets the document to black and white, runs <b>text recognition</b> and adds a text layer to the document. You will end up with a seachable/indexable pdf document. This script backs up the original file in an archive directory too ([more](#22-scan-to-sandwich-pdf)).
+<br>This script takes your scanned document (tif or pdf), removes the black borders, splits double pages, corrects the alignement, sets the document to black and white, runs <b>text recognition</b> and adds a text layer to the document. You will end up with a seachable/indexable pdf document. This script backs up the original file in an archive directory too ([more](#22-scan-to-sandwich-pdf)).
 <br><br>
 <b>3. PDF Metadata Editor</b>
 <br>Lets you edit the title- and author-tag of a pdf file ([more](#23-pdf-metadata-editor)).
