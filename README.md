@@ -108,7 +108,8 @@ sudo apt-get install ghostscript zenity</code></pre>
 * convert-doc-to-odt.nemo_action
 
 #### 2.5.2 Description ####
-Converts Microsoft Office Documents (doc and docx) to Documents in the LibreOffice Format (odt).
+Converts Microsoft Office Documents (doc and docx) to Documents in the LibreOffice Format (odt) by
+<pre><code>unoconv -f odt "YOURFILE"</code></pre>
 
 #### 2.5.3 Prerequisites ###
 Unoconv is used to convert the files.
@@ -120,7 +121,9 @@ sudo apt-get install unoconv</code></pre>
 * convert-to-pdf.nemo_action
 
 #### 2.6.2 Description ####
-Converts doc, docx, odt and txt files to pdf.
+Converts doc, docx, odt and txt files to pdf by
+<pre><code>unoconv "YOURFILE"</code></pre>
+
 
 #### 2.6.3 Prerequisites ####
 Unoconv is used to convert the files.
@@ -139,7 +142,7 @@ cd ~/Downloads/linux-mint-nemo-actions</code></pre>
 <pre><code>sudo apt-get update
 sudo apt-get install zenity ghostscript scantailor tesseract-ocr tesseract-ocr-deu tesseract-ocr-fra exactimage pdftk</code></pre>
 
-4. Copy the files for the wanted nemo action to your nemo actions directory. Linux Mint stores the Nemo Actions in <code>~/.local/share/nemo/actions</code> (user) and <code>/usr/share/nemo/actions</code> (system-wide).
+4. Copy the files and folders for the wanted nemo action to your nemo actions directory. Linux Mint stores the Nemo Actions in <code>~/.local/share/nemo/actions</code> (user) and <code>/usr/share/nemo/actions</code> (system-wide).
 Also make sure the shell script is executable.  E.g. for the "scan to sandwich pdf" nemo action you'll have to run:
 <pre><code>cp scan-to-sandwich-pdf.nemo_action ~/.local/share/nemo/actions
 mkdir ~/.local/share/nemo/actions/scan-to-sandwich-pdf
