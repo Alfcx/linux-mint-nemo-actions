@@ -130,6 +130,24 @@ Unoconv is used to convert the files.
 <pre><code>sudo apt-get update
 sudo apt-get install unoconv</code></pre>
 
+### 2.7 PDF Merger ###
+#### 2.7.1 Files ####
+* pdf-merger.nemo_action
+* pdf-merger/pdf-merger.sh
+* pdf-merger/config.ini
+* pdf-merger/lang/de.ini
+* pdf-merger/lang/en.ini
+
+#### 2.7.2 Description ####
+Combines multiple marked pdf files in alphabetical order to one pdf file. In the background pdftk does the magic:
+<pre><code>pdftk INPUT1 INPUT2 INPUT3 cat output "OUTPUT"</code></pre>
+You can choose if the input files should be deleted after processing or not (in the config.ini).
+
+#### 2.7.3. Prerequisites ####
+Pdftk is used to build the file. Zenity is used for the GUI.
+<pre><code>sudo apt-get update
+sudo apt-get install pdftk zenity</code></pre>
+
 ## 3. Install Nemo Actions from this Repository ##
 1. Fire up a terminal; make a directory, where you can store the files from this repository; enter this directory:
 <pre><code>mkdir ~/Downloads/linux-mint-nemo-actions

@@ -107,14 +107,14 @@ gs -q -dNOPAUSE -r300 -sDEVICE=tiffgray -sOutputFile="$workdir/c2p-tif/$fbname-%
 echo '25' ;
 echo "# $msg_scantailor" ;
 for i in $workdir/c2p-tif/*.tif ;
-do scantailor-cli --margins=5 --alignment=center --dpi=300 --output-dpi=300 "$i" "$workdir/c2p-tif-out" ;
+do scantailor-cli "$i" "$workdir/c2p-tif-out" ;
 done ;
 #
 # Optical character recognition by tesseract-ocr
 echo "38" ;
 echo "# $msg_ocr" ;
 for i in $workdir/c2p-tif-out/*.tif ; 
-do tesseract "$i" "$i" -l $TESSLANG -psm 1 hocr ;
+do tesseract "$i" "$i" -l $TESSLANG -psm 3 hocr ;
 done ;
 #
 # Generate sandwich-pdf (pdf-document with text layer and picture) single pages.

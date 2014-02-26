@@ -1,0 +1,11 @@
+[Nemo Action]
+#Active=false
+Name=PDF Merger
+Comment=Merge several PDF-Documents into one
+Name[de]=in ein PDF-Dokument zusammensetzen
+Comment[de]=setzt mehrere PDF-Dokumente zu einem Dokument zusammen
+Exec=<"pdf-merger/pdf-merger.sh" "%F" "%P">
+Icon-Name=pdf
+Selection=m
+Extensions=pdf;
+Dependencies=zenity;pdftk;
