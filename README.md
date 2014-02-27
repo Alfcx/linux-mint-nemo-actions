@@ -143,7 +143,8 @@ sudo apt-get install unoconv</code></pre>
 <img src="screenshots/pdf-merger-2.png" width="320">
 Combines multiple marked pdf files in alphabetical order to one pdf file. In the background pdftk does the magic:
 <pre><code>pdftk INPUT1 INPUT2 INPUT3 cat output "OUTPUT"</code></pre>
-You can choose if the input files should be deleted after processing or not (in the config.ini).
+You can choose if the input files should be deleted after processing or not (in the config.ini).<br>
+You have to run this script out of a nemo window. If you mark the files direct on the desktop the order will be messed up.
 
 #### 2.7.3. Prerequisites ####
 Pdftk is used to build the file. Zenity is used for the GUI.

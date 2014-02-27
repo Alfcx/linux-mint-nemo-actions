@@ -17,9 +17,9 @@ lang="${MDM_LANG%_*}" ;
 # Imort the translation suiting your language. 
 # If there's no translation for your language, import the english one.
 langdir="$scriptdir/lang" ;
-if [ -f "$langdir/$lang.ini" ] ;
-then source "$langdir/$lang.ini" ;
-else source "$langdir/en.ini" ;
+if [ -f "$langdir/$lang.ini" ] 
+   then source "$langdir/$lang.ini" ;
+   else source "$langdir/en.ini" ;
 fi ;
 #
 # Ask for the Name of the output file
@@ -34,6 +34,6 @@ fi ;
 pdftk $inputfiles cat output "$dir/$OUTPUTNAME.pdf" ;
 #
 # Delete input files (only if set to true in config.ini)
-if [[ "$delinput" = "true" ]] ;
+if [[ "$delinput" = "true" ]] 
    then rm $inputfiles ;
 fi ;
