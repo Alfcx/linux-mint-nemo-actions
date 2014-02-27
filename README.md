@@ -139,6 +139,8 @@ sudo apt-get install unoconv</code></pre>
 * pdf-merger/lang/en.ini
 
 #### 2.7.2 Description ####
+<img src="screenshots/pdf-merger-1.png" width="400">
+<img src="screenshots/pdf-merger-2.png" width="320">
 Combines multiple marked pdf files in alphabetical order to one pdf file. In the background pdftk does the magic:
 <pre><code>pdftk INPUT1 INPUT2 INPUT3 cat output "OUTPUT"</code></pre>
 You can choose if the input files should be deleted after processing or not (in the config.ini).
