@@ -28,10 +28,11 @@
 #    - tesseract-ocr-deu tesseract-ocr-fra (and every other language-file you need)
 #    - exactimage 
 #    - pdftk
+#    - procmail
 #
 # You can do this using the following commands:
 #   sudo apt-get update
-#   sudo apt-get install zenity ghostscript scantailor tesseract-ocr tesseract-ocr-deu tesseract-ocr-fra exactimage pdftk
+#   sudo apt-get install zenity ghostscript scantailor tesseract-ocr tesseract-ocr-deu tesseract-ocr-fra exactimage pdftk procmail
 #
 #########################################
 # Script (no changes needed, hopefully) #
@@ -67,6 +68,20 @@ source "$scriptdir/config.ini" ;
 workdir="$tmpdir/$fbnamenospaces" ;
 archivename="`date +"%F_%H-%M-%S"`_$basenamenospaces" ;
 #
+# Lock the script (make sure only one instance runs)
+if [ -e "$lockfile" ] ;
+   then 
+    zenity --info  \
+          --title="$msg_lock_title" \
+          --text="$msg_lock_text" \
+          --no-wrap ;
+    exit ;
+ fi ;
+lockfile -r 0 $lockfile || exit ;
+#
+# remove workdirectory & delete lockfile before exit
+trap "rm -r $workdir; rm -f $lockfile; exit" 0 ;
+#
 # Ask for the primary language of the document
 if ! SELTESSLANG=$(zenity --list \
                      --hide-header \
@@ -91,43 +106,43 @@ cd "$filedir" ;
 #
 # create direcotories
 mkdir -p $tmpdir $workdir $archivedir ;
-mkdir -p $workdir/c2p-tif $workdir/c2p-tif-out ;
+mkdir -p $workdir/pnm $workdir/tif ;
 #
 # backup the original file
 cp "$file" "$archivedir/$archivename" ;
 #
-# Split up the multipage document to single pages in tif-format
+# Split up the multipage document to single pages in pnm-format
 echo "13" ;
 echo "# $msg_singlepage" ;
-gs -q -dNOPAUSE -r300 -sDEVICE=tiffgray -sOutputFile="$workdir/c2p-tif/$fbname-%03d.tif" "$basename" -c quit ;
+gs -q -dNOPAUSE -r600 -sDEVICE=pgm -sOutputFile="$workdir/pnm/$fbname-%03d.pnm" "$basename" -c quit ;
 #
 # call scantailor to split double pages, remove borders, black and white, etc.
 # If scantailor removes too much Border add "--content-detection=cautious" 
 # behind scantailor-cli (whith spaces and whitout the "")
 echo '25' ;
 echo "# $msg_scantailor" ;
-for i in $workdir/c2p-tif/*.tif ;
-do scantailor-cli "$i" "$workdir/c2p-tif-out" ;
+for i in $workdir/pnm/*.pnm ;
+do scantailor-cli "$i" "$workdir/tif" ;
 done ;
 #
 # Optical character recognition by tesseract-ocr
 echo "38" ;
 echo "# $msg_ocr" ;
-for i in $workdir/c2p-tif-out/*.tif ; 
+for i in $workdir/tif/*.tif ; 
 do tesseract "$i" "$i" -l $TESSLANG -psm 3 hocr ;
 done ;
 #
 # Generate sandwich-pdf (pdf-document with text layer and picture) single pages.
 echo "50" ;
 echo "# $msg_hocr2pdf" ;
-for i in $workdir/c2p-tif-out/*.tif ;
+for i in $workdir/tif/*.tif ;
 do hocr2pdf -i "$i" -s -o "$i.pdf" < "$i.html" ;
 done;
 #
 # Merge the single page pdf documents to a multipage pdf document
 echo "63" ;
 echo "# $msg_buildmultipage" ;
-pdftk $workdir/c2p-tif-out/*.pdf cat output "$workdir/$fbname-big.pdf"
+pdftk $workdir/tif/*.pdf cat output "$workdir/$fbname-big.pdf"
 #
 # Delete the original file
 rm "$basename" ;
@@ -136,16 +151,14 @@ rm "$basename" ;
 echo "75" ;
 gs -sDEVICE=pdfwrite -sPAPERSIZE=a4 -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$fbname$suffix.pdf" "$workdir/$fbname-big.pdf" ;
 #
-# Clean up
-echo "88" ;
-rm $workdir/c2p-tif/*.tif $workdir/c2p-tif-out/*.tif $workdir/c2p-tif-out/*.html $workdir/c2p-tif-out/*.pdf $workdir/c2p-tif-out/cache/speckles/*.tif $workdir/*.pdf ;
-rmdir $workdir/c2p-tif $workdir/c2p-tif-out/cache/speckles $workdir/c2p-tif-out/cache $workdir/c2p-tif-out $workdir ;
-echo "100" ;
+# Progress dialogue
 echo "# $msg_success" ;
 ) | zenity --progress \
      --title "$msg_prog_title" \
      --text "$msg_prog_text" \
      --pulsate --width=400 --auto-close --auto-kill ;
+#
+# Finish dialogue
 zenity --info  \
   --title="$msg_fin_title" \
   --text="$msg_fin_text" \

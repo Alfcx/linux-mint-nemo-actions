@@ -64,7 +64,7 @@ If necessary apply the [PDF Document Page Rotator](#21-pdf-document-page-rotator
 #### 2.2.3 Prerequisites ####
 This Script uses several programs. 
 <pre><code>sudo apt-get update
-sudo apt-get install zenity ghostscript scantailor tesseract-ocr tesseract-ocr-deu tesseract-ocr-fra exactimage pdftk</code></pre>
+sudo apt-get install zenity ghostscript scantailor tesseract-ocr tesseract-ocr-deu tesseract-ocr-fra exactimage pdftk procmail</code></pre>
 
 
 ### 2.3 PDF Metadata Editor ###
