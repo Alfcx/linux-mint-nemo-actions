@@ -8,4 +8,4 @@ Exec=<"scan-to-sandwich-pdf/scan-to-sandwich-pdf.sh" "%F">
 Icon-Name=scanner
 Selection=s
 Extensions=pdf;tiff;tif;
-Dependencies=zenity;ghostscript;scantailor-cli;tesseract;hocr2pdf;pdftk;
+Dependencies=zenity;ghostscript;scantailor-cli;tesseract;hocr2pdf;pdftk;lockfile;
