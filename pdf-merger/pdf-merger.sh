@@ -4,8 +4,7 @@
 # PDF Merger by Alfcx #
 #######################
 #
-inputfiles="$1" ;
-dir="$2" ;
+dir=`dirname "$1"` ;
 #
 # Get settings from config.ini
 scriptdir=`dirname "$0"` ;
@@ -31,7 +30,7 @@ if ! OUTPUTNAME=$(zenity --entry \
 fi ;
 # 
 # Merge the files
-pdftk $inputfiles cat output "$dir/$OUTPUTNAME.pdf" ;
+pdftk "$@" cat output "$dir/$OUTPUTNAME.pdf" ;
 #
 # Delete input files (only if set to true in config.ini)
 if [[ "$delinput" = "true" ]] 
